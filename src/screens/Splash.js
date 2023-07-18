@@ -1,16 +1,18 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React, {useEffect} from 'react';
+import makeStyle from '../constants/globalstyles';
+import {navigate} from '../services/navigationService';
 
-const Splash = ({navigation}) => {
+const Splash = () => {
   useEffect(() => {
     setTimeout(() => {
-      navigation.navigate('Login');
+      navigate('Login');
     }, 3000);
   }, []);
 
   return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text style={{color: 'black'}}>Splash Screen</Text>
+    <View style={[makeStyle.container, makeStyle.column]}>
+      <Text style={makeStyle.text}>Splash Screen</Text>
     </View>
   );
 };
